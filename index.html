@@ -3,13 +3,15 @@
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>fullPage.js - Pure Javascript version</title>
+	<title>Elpha - Three individual on a quest to revolutionise the technology.</title>
 	<meta name="author" content="Alvaro Trigo Lopez" />
 	<meta name="description" content="fullPage plugin by Alvaro Trigo. Pure javascript version of full screen slider." />
 	<meta name="keywords"  content="fullpage,jquery,alvaro,trigo,plugin,fullscren,screen,full,iphone5,apple,pure,javascript,slider,hijacking" />
 	<meta name="Resource-type" content="Document" />
 
-
+    <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.5/material.indigo-pink.min.css">
+    <script src="https://storage.googleapis.com/code.getmdl.io/1.0.5/material.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link rel="stylesheet" type="text/css" href="javascript.fullPage.css" />
 
 	<style>
@@ -81,7 +83,7 @@
 		/* Section 1
 		 * --------------------------------------- */
 		#section0{
-			background-color: #BFDA00;
+            background-color: #2C3E50;
 		}
 		#section0 h1{
 			color: #444;
@@ -108,7 +110,7 @@
 		/* Section 3
 		 * --------------------------------------- */
 		#section2{
-			background-color: #2C3E50;
+			background-color: #BFDA00;
 		}
 		#section2 h1{
 			color: #F2F2F2;
@@ -119,13 +121,49 @@
 	</style>
 </head>
 <body>
+    <style>
+.demo-layout-transparent {
+  background: url('../assets/demos/transparent.jpg') center / cover;
+}
+.demo-layout-transparent .mdl-layout__header,
+.demo-layout-transparent .mdl-layout__drawer-button {
+  /* This background is dark, so we set text to white. Use 87% black instead if
+     your background is light. */
+  color: white;
+}
+</style>
+<div class="demo-layout-transparent mdl-layout mdl-js-layout">
+  <header class="mdl-layout__header mdl-layout__header--transparent">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <span class="mdl-layout-title">Title</span>
+      <!-- Add spacer, to align navigation to the right -->
+      <div class="mdl-layout-spacer"></div>
+      <!-- Navigation -->
+      <nav class="mdl-navigation">
+        <a class="mdl-navigation__link" href="">Overview</a>
+        <a class="mdl-navigation__link" href="">Home</a>
+        <a class="mdl-navigation__link" href="">Our Team</a>
+        <a class="mdl-navigation__link" href="">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+  <div class="mdl-layout__drawer" >
+    <span class="mdl-layout-title">Title</span>
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link" href="">Link</a>
+      <a class="mdl-navigation__link" href="">Link</a>
+      <a class="mdl-navigation__link" href="">Link</a>
+      <a class="mdl-navigation__link" href="">Link</a>
+    </nav>
+  </div>
 
-
+</div>
 <div id="fullpage">
 	<div class="section " id="section0">
 		<div class="content">
-			<h1>fullPage.js</h1>
-			<p>Javascript only version</p>
+			<h1><font color="white">fullPage.js</font></h1>
+			<p><font color="white">Javascript only version</font></p>
 		</div>
 	</div>
 	<div class="section" id="section1">
@@ -162,7 +200,7 @@
 <script type="text/javascript" src="javascript.fullPage.js"></script>
 <script type="text/javascript">
 	fullpage.initialize('#fullpage', {
-		anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
+		anchors: ['Overview', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
 		menu: '#menu',
 		css3:true
 	});
