@@ -1,173 +1,306 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+    <!DOCTYPE html>
+    <html xmlns="http://www.w3.org/1999/xhtml">
 
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>fullPage.js - Pure Javascript version</title>
-	<meta name="author" content="Alvaro Trigo Lopez" />
-	<meta name="description" content="fullPage plugin by Alvaro Trigo. Pure javascript version of full screen slider." />
-	<meta name="keywords"  content="fullpage,jquery,alvaro,trigo,plugin,fullscren,screen,full,iphone5,apple,pure,javascript,slider,hijacking" />
-	<meta name="Resource-type" content="Document" />
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Elpha - Three individual on a quest to revolutionise the technology.</title>
+        <meta name="author" content="Alvaro Trigo Lopez" />
+        <meta name="description" content="fullPage plugin by Alvaro Trigo. Pure javascript version of full screen slider." />
+        <meta name="keywords"  content="fullpage,jquery,alvaro,trigo,plugin,fullscren,screen,full,iphone5,apple,pure,javascript,slider,hijacking" />
+        <meta name="Resource-type" content="Document" />
 
+        <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.5/material.indigo-pink.min.css">
+        <script src="https://storage.googleapis.com/code.getmdl.io/1.0.5/material.min.js"></script>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" type="text/css" href="javascript.fullPage.css" />
 
-	<link rel="stylesheet" type="text/css" href="javascript.fullPage.css" />
+        <style>
+            /* Reset CSS
+             * --------------------------------------- */
+            body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,
+            form,fieldset,input,textarea,p,blockquote,th,td {
+                padding: 0;
+                margin: 0;
+            }
+            a{
+                text-decoration:none;
+            }
+            table {
+                border-spacing: 0;
+            }
+            fieldset,img {
+                border: 0;
+            }
+            address,caption,cite,code,dfn,em,strong,th,var {
+                font-weight: normal;
+                font-style: normal;
+            }
+            strong{
+                font-weight: bold;
+            }
+            ol,ul {
+                list-style: none;
+                margin:0;
+                padding:0;
+            }
+            caption,th {
+                text-align: left;
 
-	<style>
-		/* Reset CSS
-		 * --------------------------------------- */
-		body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,
-		form,fieldset,input,textarea,p,blockquote,th,td {
-		    padding: 0;
-		    margin: 0;
-		}
-		a{
-			text-decoration:none;
-		}
-		table {
-		    border-spacing: 0;
-		}
-		fieldset,img {
-		    border: 0;
-		}
-		address,caption,cite,code,dfn,em,strong,th,var {
-		    font-weight: normal;
-		    font-style: normal;
-		}
-		strong{
-			font-weight: bold;
-		}
-		ol,ul {
-		    list-style: none;
-		    margin:0;
-		    padding:0;
-		}
-		caption,th {
-		    text-align: left;
-
-		}
-		h1,h2,h3,h4,h5,h6 {
-		    font-weight: normal;
-		    font-size: 100%;
-		    margin:0;
-		    padding:0;
-		    color:#444;
-		}
-		q:before,q:after {
-		    content:'';
-		}
-		abbr,acronym { border: 0;
-		}
-
-
-		/* Custom CSS
-		 * --------------------------------------- */
-		body{
-			font-family: arial,helvetica;
-			color: #F2F2F2;
-		}
-		h1{
-			font-size: 6em;
-		}
-		p{
-			font-size: 2em;
-		}
-		.content{
-			position: relative;
-			top: 50%;
-			transform: translateY(-50%);
-			text-align: center;
-		}
-
-		/* Section 1
-		 * --------------------------------------- */
-		#section0{
-			background-color: #BFDA00;
-		}
-		#section0 h1{
-			color: #444;
-		}
-		#section0 p{
-			color: #333;
-			opacity: 0.4;
-		}
+            }
+            h1,h2,h3,h4,h5,h6 {
+                font-weight: normal;
+                font-size: 100%;
+                margin:0;
+                padding:0;
+                color:#444;
+            }
+            q:before,q:after {
+                content:'';
+            }
+            abbr,acronym { border: 0;
+            }
 
 
-		/* Section 2
-		 * --------------------------------------- */
-		#section1{
-			background-color: #2EBE21;
-		}
-		#section1 h1{
-			color: #fff;
-		}
-		#section1 p{
-			opacity: 0.8;
-		}
+            /* Custom CSS
+             * --------------------------------------- */
+            body{
+                font-family: arial,helvetica;
+                color: #F2F2F2;
+            }
+            h1{
+                font-size: 6em;
+            }
+            p{
+                font-size: 2em;
+            }
+            .content{
+                position: relative;
+                top: 50%;
+                transform: translateY(-50%);
+                text-align: center;
+
+            }
+
+            /* Section 1
+             * --------------------------------------- */
+            #section0{
+
+                background-color: #2C3E50;
+
+/*
+                background-image: url("http://images.alphacoders.com/511/511052.jpg");
+                background-size: cover;
+*/
+            }
+            #section0 h1{
+                color: #444;
+            }
+            #section0 p{
+                color: #333;
+                opacity: 0.4;
+            }
 
 
-		/* Section 3
-		 * --------------------------------------- */
-		#section2{
-			background-color: #2C3E50;
-		}
-		#section2 h1{
-			color: #F2F2F2;
-		}
-		#section2 p{
-			opacity: 0.6;
-		}
-	</style>
+            /* Section 2
+             * --------------------------------------- */
+            #section1{
+                background-color: #2EBE21;
+            }
+            #section1 h1{
+                color: #fff;
+            }
+            #section1 p{
+                opacity: 0.8;
+            }
+
+
+            /* Section 3
+             * --------------------------------------- */
+            #section2{
+                background-color: #BFDA00;
+            }
+            #section2 h1{
+                color: #F2F2F2;
+            }
+            #section2 p{
+                opacity: 0.6;
+            }
+
+            .demo-card-wide.mdl-card {
+      width: 512px;
+    }
+    .demo-card-wide > .mdl-card__title {
+          color: #fff;
+          height: 176px;
+          background: url('../assets/demos/welcome_card.jpg') center / cover;
+    }
+    .demo-card-wide > .mdl-card__menu {
+      color: #fff;
+    }
+            .demo-layout-transparent {
+      background: url('../assets/demos/transparent.jpg') center / cover;
+    }
+    .demo-layout-transparent .mdl-layout__header,
+    .demo-layout-transparent .mdl-layout__drawer-button {
+      /* This background is dark, so we set text to white. Use 87% black instead if
+         your background is light. */
+      color: white;
+    }
+        </style>
 </head>
 <body>
 
+    <div class="demo-layout-transparent mdl-layout mdl-js-layout">
+      <header class="mdl-layout__header mdl-layout__header--transparent">
+        <div class="mdl-layout__header-row">
+          <!-- Title -->
+          <span class="mdl-layout-title">Elpha</span>
+          <!-- Add spacer, to align navigation to the right -->
+          <div class="mdl-layout-spacer"></div>
+          <!-- Navigation -->
+          <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" href="#home">Home</a>
+<!--            <a class="mdl-navigation__link" href="">Products</a>-->
+            <a class="mdl-navigation__link" href="#ourteam">Our Team</a>
+                <a class="mdl-navigation__link" href="#products">Products</a>
+            <a class="mdl-navigation__link" href="#portfolio">Portfolio</a>
+            <a class="mdl-navigation__link" href="#contact">Contact Us</a>
 
-<div id="fullpage">
-	<div class="section " id="section0">
-		<div class="content">
-			<h1>fullPage.js</h1>
-			<p>Javascript only version</p>
-		</div>
-	</div>
-	<div class="section" id="section1">
-		<div class="slide" id="slide1">
-			<div class="content">
-				<h1>No need for jQuery</h1>
-				<p>
-					5 Kb gzipped!!
-				</p>
-				<p>
-		      		Improve the loading time of your site!
-				</p>
-			</div>
-		</div>
-		<div class="slide" id="slide2">
-			<div class="content">
-				<h1>Slides too!</h1>
-			</div>
-		</div>
-		<div class="slide" id="slide2">
-			<div class="content">
-				<h1>More slides!</h1>
-			</div>
-		</div>
-	</div>
-	<div class="section" id="section2">
-		<div class="content">
-			<h1>Compatible</h1>
-			<p>IE 8+ support.</p>
-		</div>
-	</div>
-</div>
+          </nav>
+        </div>
+      </header>
+      <div class="mdl-layout__drawer" >
+        <span class="mdl-layout-title">Elpha</span>
+        <nav class="mdl-navigation">
+          <a class="mdl-navigation__link" href="">Overview</a>
+          <a class="mdl-navigation__link" href="">Home</a>
+          <a class="mdl-navigation__link" href="">Our Team</a>
+          <a class="mdl-navigation__link" href="">Contact Us</a>
+        </nav>
+      </div>
 
-<script type="text/javascript" src="javascript.fullPage.js"></script>
-<script type="text/javascript">
-	fullpage.initialize('#fullpage', {
-		anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
-		menu: '#menu',
-		css3:true
-	});
+    </div>
+    <div id="fullpage">
+        <div class="section " id="section0">
+            <div class="content">
 
-</script>
+                <h1><font color="white">fullPage.js</font></h1>
+                <p><font color="white">Javascript only version</font></p>
 
-</body>
-</html>
+            </div>
+        </div>
+        <div class="section" id="section1">
+<!--            <div class="slide" data-anchor="slide1" id="slide1">-->
+                <div class="content">
+                    <h1>No need for jQuery</h1>
+                    <p>
+                        5 Kb gzipped!!
+                    </p>
+                    <p>
+                        Improve the loading time of your site!
+                    </p>
+<!--                </div>-->
+            </div>
+<!--
+            <div class="slide" data-anchor="slide2" id="slide2">
+                <div class="content">
+                    <h1>Slides too!</h1>
+                </div>
+            </div>
+            <div class="slide" data-anchor="slide3" id="slide2">
+                <div class="content">
+                    <h1>More slides!</h1>
+                </div>
+            </div>
+-->
+        </div>
+        <div class="section" id="section2">
+            <div class="content">
+                <h1>Compatible</h1>
+                <p>IE 8+ support.</p>
+            </div>
+        </div>
+         <div class="section" id="section3">
+            <div class="content">
+                <h1>Compatible</h1>
+                <p>IE 8+ support.</p>
+            </div>
+        </div>
+         <div class="section" id="section4">
+            <div class="content">
+                <h1>Yahoo</h1>
+            </div>
+        </div>
+    </div>
+<script type="application/javascript">
+    function shadow(int){
+  return "0px "+int/5+"px "+int/3+"px #111"; //shadow equation. accurate to the material design standards (approximately)
+}
+
+function update(){
+  var list = document.getElementsByClassName("card"); //loop through all HTML elements with the class card.
+  //var list = document.getElementsByTagName("card");
+  //uncomment line above if you want to use <card> instead of <div class='card'>
+  var len = list.length;
+  for(i=0;i<len;i++){
+    list[i].style.display="block";
+    if(!list[i].hasAttribute("no-margin")) //set default styles if no contradicting attributes exist
+    	list[i].style.margin="25px";
+    if(!list[i].hasAttribute("no-height"))
+    	list[i].style.height="100px";
+    if(!list[i].hasAttribute("no-transition"))
+    	list[i].style.transition=".15s box-shadow";
+    if(!list[i].hasAttribute("no-material-border"))
+    	list[i].style.borderBottom="1px solid #AAA";
+    if(!list[i].hasAttribute("no-padding"))
+      list[i].style.padding="10px";
+    doDepth(list[i]); //looping through all of the elements
+  }
+}
+
+function setDepth(int,obj,type){
+  if(int==null)
+    return
+  obj.style.boxShadow = shadow(int); //using shadow equation to set css style
+  if(type==="hover")
+  	obj.setAttribute("z",obj.getAttribute("z-hover")); //for when click and hover interfere with eachother
+}
+
+function doDepth(i){
+  function ga(x) {return i.getAttribute(x);} //easier to call method alias
+
+  //getting attributes
+  var zh = ga("z-default") || null;
+  var zhc = ga("z-click") || null;
+  var zhh = ga("z-hover") || null;
+  setDepth(zh,i);
+  //events of release (mouse leave, mouse up, etc)
+  i.onmouseup   = function(){ setDepth(ga("z"),i)};
+  i.onmouseout  = function(){ setDepth(zh,i)};
+
+  //events of activate (mouse enter, mouse down, etc)
+  i.onmousedown = function(){ setDepth(zhc,i)};
+  i.onmouseover = function(){setDepth(zhh,i,"hover")};
+}
+
+update(); //initial update</script>
+    <script type="text/javascript" src="javascript.fullPage.js"></script>
+    <script type="text/javascript">
+        fullpage.initialize('#fullpage', {
+            anchors: ['home', 'ourteam', 'products','portfolio', 'contact', 'lastPage'],
+            menu: '#menu',
+            css3:true,
+            //navigation
+            'navigation': true,
+            'navigationPosition': 'right',
+            'navigationColor': '#000',
+            'navigationTooltips': ['home', 'ourteam','products', 'portfolio', 'contact', 'lastPage'],
+            'slidesNavigation': false,
+            'slidesNavPosition': 'bottom',
+            'scrollBar': false,
+        });
+
+    </script>
+
+    </body>
+    </html>
