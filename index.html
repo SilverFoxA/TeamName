@@ -146,6 +146,42 @@
          your background is light. */
       color: white;
     }
+    
+    
+    #menu li span.underline a:hover span { 
+    text-decoration: none;
+    border-bottom: 1px solid #FAA301;  
+}
+
+#menu {
+    list-style-type: none;
+    margin-bottom: 10px;
+    position: relative;
+    clip: rect(auto, auto, auto, auto);
+    margin-top: 0;
+    height: 50px;
+    width: 330px;
+    margin-left: 40px; 
+}
+#menu li {
+    float: left;
+    position: relative;
+    }
+    
+#menu a {
+    text-decoration: none;
+    color: #000000;
+    display: block;
+    padding: 13px 15px 15px 15px;
+    margin: 0 22px 0 22px;
+    position: inherit;
+    font-family: Helvetica, verdana, arial, sans-serif;
+    font-size: 17px;
+    font-weight: bold;
+
+    
+}
+
         </style>
 </head>
 <body>
@@ -159,12 +195,20 @@
           <div class="mdl-layout-spacer"></div>
           <!-- Navigation -->
           <nav class="mdl-navigation">
-            <a class="mdl-navigation__link" href="#home">Home</a>
+              <!---Simple way of making text undeline on hover is using onmouseover="this.style.textdecoration='underline'"
+              but constraint is that google chrome doesn't support the coloriing of text underline-->
+              
+                  
+    <ul id="menu">
+        <li style="z-index: 7;"><span class="underline mdl-navigation__link" href="#home"><span>link1</span></a></span></li>
+         <li style="z-index: 7;"><span class="underline mdl-navigation__link" href="#ourteam"><span>link1</span></a></span></li>
+    </ul>
+          <!--  <a class="mdl-navigation__link" href="#home">Home</a>
 <!--            <a class="mdl-navigation__link" href="">Products</a>-->
-            <a class="mdl-navigation__link" href="#ourteam">Our Team</a>
+          <!--  <a class="mdl-navigation__link" href="#ourteam">Our Team</a>
                 <a class="mdl-navigation__link" href="#products">Products</a>
             <a class="mdl-navigation__link" href="#portfolio">Portfolio</a>
-            <a class="mdl-navigation__link" href="#contact">Contact Us</a>
+            <a class="mdl-navigation__link" href="#contact">Contact Us</a>-->
 
           </nav>
         </div>
