@@ -163,10 +163,9 @@
   padding:0;
 }
 #categories{
-	margin-left:3%;
   overflow:hidden;
   width:90%;
-  margin:auto;
+  margin:0 auto;
 }
 .clr:after{
   content:"";
@@ -176,33 +175,10 @@
 #categories li{
   position:relative;
   list-style-type:none;
-  width:27.85714285714286%; /* = (100-2.5) / 3.5 */
-  padding-bottom: 32.16760145166612%; /* =  width /0.866 */
-  /*float:left;*/
-  margin-left: 3%;
+  float:left;
   overflow:hidden;
   visibility:hidden;
- 
-  -webkit-transform: rotate(-60deg) skewY(30deg);
-  -ms-transform: rotate(-60deg) skewY(30deg);
   transform: rotate(-60deg) skewY(30deg);
-}
-#categories li:nth-child(3n+2){
-  margin:0 1%;
-}
-#categories li:nth-child(6n+4){
-  margin-left:0.5%;
-}
-#categories li:nth-child(6n+4), #categories li:nth-child(6n+5), #categories li:nth-child(6n+6) {
-	margin-top: -6.9285714285%;
-  margin-bottom: -6.9285714285%;
-  
-  -webkit-transform: translateX(50%) rotate(-60deg) skewY(30deg);
-  -ms-transform: translateX(50%) rotate(-60deg) skewY(30deg);
-  transform: translateX(50%) rotate(-60deg) skewY(30deg);
-}
-#categories li:nth-child(6n+4):last-child, #categories li:nth-child(6n+5):last-child, #categories li:nth-child(6n+6):last-child{
-  margin-bottom:0%;
 }
 #categories li *{
   position:absolute;
@@ -214,12 +190,8 @@
   text-align:center;
   color:#fff;
   overflow:hidden;
-  
-  -webkit-transform: skewY(-30deg) rotate(60deg);
-  -ms-transform: skewY(-30deg) rotate(60deg);
-  transform: skewY(-30deg) rotate(60deg);
-  
-	-webkit-backface-visibility:hidden;
+  transform: skewY(-30deg) rotate(60deg);  
+	backface-visibility:hidden;
   
 }
 
@@ -235,9 +207,6 @@
   padding:0 5%;
   background-color:#008080; background-color: rgba(0, 128, 128, 0.8);
   font-family: 'Raleway', sans-serif;
-  
-  -webkit-transition: top .2s ease-out, bottom .2s ease-out, .2s padding .2s ease-out;
-  -ms-transition: top .2s ease-out, bottom .2s ease-out, .2s padding .2s ease-out;
   transition: top .2s ease-out, bottom .2s ease-out, .2s padding .2s ease-out;
 }
 #categories li h1{
@@ -275,6 +244,98 @@
 #categories li div:hover p{
   top:50%;
   padding-top:10%;
+}
+@media (min-width:1201px) {
+  #categories li{
+    width:17.364%; /* = (100-4.5) / 5.5 */
+    padding-bottom: 20.05%; /* =  width /0.866 */
+  }
+  #categories li:nth-child(10n+6), #categories li:nth-child(10n+7), #categories li:nth-child(10n+8), #categories li:nth-child(10n+9), #categories li:nth-child(10n+10) {
+    margin-top: -4.2%;
+    margin-bottom: -4.2%;
+    transform: translateX(50%) rotate(-60deg) skewY(30deg);
+  }
+  #categories li:nth-child(10n+6):last-child, #categories li:nth-child(10n+7):last-child, #categories li:nth-child(10n+8):last-child, #categories li:nth-child(10n+9):last-child, #categories li:nth-child(10n+10):last-child{
+    margin-bottom:0;
+  }
+  #categories li:nth-child(10n+6){
+    margin-left:0.5%;
+  }
+  #categories li:nth-child(5n+2) {
+    margin-left:1%;
+    margin-right:1%;
+  }
+  #categories li:nth-child(5n+3),#categories li:nth-child(5n+4){
+    margin-right:1%;
+  }
+}
+
+
+@media (max-width: 1200px) and (min-width:901px) {
+  #categories li{
+    width:21.444%; /* = (100-3.5) / 4.5 */
+    padding-bottom: 24.763%; /* =  width /0.866 */
+  }
+  #categories li:nth-child(8n+5), #categories li:nth-child(8n+6), #categories li:nth-child(8n+7), #categories li:nth-child(8n+8) {
+    margin-top: -5.298%;
+    margin-bottom: -5.298%;
+    transform: translateX(50%) rotate(-60deg) skewY(30deg);
+  }
+  #categories li:nth-child(8n+5):last-child, #categories li:nth-child(8n+6):last-child, #categories li:nth-child(8n+7):last-child, #categories li:nth-child(8n+8):last-child{
+    margin-bottom:0;
+  }
+  #categories li:nth-child(8n+5){
+    margin-left:0.5%;
+  }
+  #categories li:nth-child(4n+2) {
+    margin-left:1%;
+    margin-right:1%;
+  }
+  #categories li:nth-child(4n+3){
+    margin-right:1%;
+  }
+}
+
+@media (max-width: 900px) and (min-width:601px) {
+  #categories li{
+    width:27.857%; /* = (100-2.5) / 3.5 */
+    padding-bottom: 32.168%; /* =  width /0.866 */
+  }
+  #categories li:nth-child(6n+4), #categories li:nth-child(6n+5), #categories li:nth-child(6n+6) {
+    margin-top: -7.322%;
+    margin-bottom: -7.322%;
+    transform: translateX(50%) rotate(-60deg) skewY(30deg);
+  }
+  #categories li:nth-child(6n+4):last-child, #categories li:nth-child(6n+5):last-child, #categories li:nth-child(6n+6):last-child{
+    margin-bottom:0;
+  }
+  #categories li:nth-child(6n+4){
+    margin-left:0.5%;
+  }
+  #categories li:nth-child(3n+2) {
+    margin-left:1%;
+    margin-right:1%;
+  }
+}
+@media (max-width: 600px) {
+  #categories li{
+    width:39.4%; /* = (100-1.5) / 2.5 */
+    padding-bottom: 45.496%; /* =  width /0.866 */
+  }
+  #categories li:nth-child(4n+3), #categories li:nth-child(4n+4){
+    margin-top: -10.392%;
+    margin-bottom: -10.392%;
+    transform: translateX(50%) rotate(-60deg) skewY(30deg);
+  }
+  #categories li:nth-child(4n+3):last-child, #categories li:nth-child(4n+4):last-child{
+    margin-bottom:0;
+  }
+  #categories li:nth-child(4n+3){
+    margin-left:0.5%;
+  }
+  #categories li:nth-child(2n+2) {
+    margin-left:1%;
+  }
 }
     
 }
@@ -321,7 +382,7 @@
         <div class="section " id="section0">
             <div class="content">
 
-             <ul id="categories" class="clr">
+          <ul id="categories" class="clr">
                 <li>
                   <div>
                     <img src="http://ndl.mgccw.com/mu3/app/20140317/20/1395059281138/sss/7_small.png" alt=""/>
@@ -343,8 +404,52 @@
                     <p>Some sample text about the article this hexagon leads to</p>
                 </div>
               </li>
-            
-</ul>
+              <li>
+                  <div>
+                    <img src="http://www.tabletwallpapers.org/download/thumbnails/eagle-wallpaper.jpg" alt=""/>
+                    <h1>This is a title</h1>
+                    <p>Some sample text about the article this hexagon leads to</p>
+                </div>
+              </li>
+                
+<!--              <li class="pusher"></li>-->
+                  <li>
+                  <div>
+                    <img src="http://ndl.mgccw.com/mu3/app/20140317/20/1395059281138/sss/7_small.png" alt=""/>
+                    <h1>This is a title a bit longer</h1>
+                    <p>Some sample text about the article this hexagon leads to</p>
+                </div>
+              </li>
+                <li>
+                  <div>
+                    <img src="http://wackiapps.com/admin/images/apps_images/20130320114316-512x512.jpg" alt=""/>
+                    <h1>This is a title</h1>
+                    <p>Some sample text about the article this hexagon leads to</p>
+                </div>
+              </li>
+              <li>
+                  <div>
+                    <img src="http://cdn.androidpolice.com/wp-content/uploads/2012/08/nexusae0_thumb21.png" alt=""/>
+                    <h1>This is a title</h1>
+                    <p>Some sample text about the article this hexagon leads to</p>
+                </div>
+              </li>
+              <li>
+                  <div>
+                    <img src="http://www.tabletwallpapers.org/download/thumbnails/eagle-wallpaper.jpg" alt=""/>
+                    <h1>This is a title</h1>
+                    <p>Some sample text about the article this hexagon leads to</p>
+                </div>
+              </li>
+                 <li>
+                  <div>
+                    <img src="http://www.tabletwallpapers.org/download/thumbnails/eagle-wallpaper.jpg" alt=""/>
+                    <h1>This is a title</h1>
+                    <p>Some sample text about the article this hexagon leads to</p>
+                </div>
+              </li>
+                
+            </ul>
 
             </div>
         </div>
